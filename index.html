@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Online Banking ..</title>
+    <title>Oquirrh Mountain Banking ..</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="icon" href="/img/MTM Favicon.png" />
     <!-- <script type="text/javascript">
@@ -16,149 +16,74 @@
   </head>
 
   <body>
-    <div class="container" id="container" href="/img/Elk.jpg"></div>
-    <div id="top_links">
-      <div id="header">
-        <h1>Online Banking System<span class="style1"></span></h1>
-        <h1>For YOUR NEW BANK<span class="style1"></span></h1>
-        <h2>Extra Ordinary Service</h2>
-      </div>
-
-      <div id="navigation">
-        <ul>
-          <li><a href="create1.html">NEW CUSTOMER</a></li>
-          <li><a href="login.html">LOGIN</a></li>
-
-          <li><a href="about.html">ABOUT US</a></li>
-        </ul>
-      </div>
-
-      <table cellpadding="0" cellspacing="0" id="content1">
-        <tr align="justify">
-          <td class="con" valign="top">
-            <div id="heade1"><h1>Results</h1></div>
-            <p>
-              This is Global Business bank which is under business and finance
-              category for your website design. Freedesignertemplates.com is a
-              free collection of site templates with HTML layouts which are
-              frequently updated.<br /><br />
-              These web design layouts are developed by the professional
-              designers for you to make your task easy in creating a website and
-              are easy to download.
-            </p>
-          </td>
-
-          <td class="con" valign="top">
-            <div id="heade2"><h1>Opportunities</h1></div>
-            <p>
-              These Global Business bank would be idle for building a successful
-              online businesses. Download the required HTML template, install it
-              and edit the existing content with your original text.<br /><br />
-
-              The entire website are pre-designed websites all you need to do is
-              adding your own personal content and start your own website.
-            </p>
-          </td>
-
-          <td class="con" valign="top">
-            <div id="heade3"><h1>Solutions</h1></div>
-            <p>
-              There are various other template categories like Art, Finance,
-              Nature, Night club, Communication, Computer, Music, Religious,
-              Fashion, Holiday, Travel, Health, Medicine. This free Global
-              Business bank which is built using XHTML and CSS.<br />
-
-              These are user friendly that any user can download and customize
-              it according to their wish.
-            </p>
-          </td>
-        </tr>
-      </table>
-
-      <table style="width: 897px; background: #ffffff; margin: 0 auto">
-        <tr align="justify">
-          <td width="299" valign="top" style="border-right: #666666 1px dotted">
-            <div id="services">
-              <h1>Services</h1>
-              <br />
-              <ul>
-                <li><a href="#">www.javatpoint.com</a></li>
-                <li><a href="#">www.javacstpoint.com </a></li>
-                <li><a href="#">www.javatpoint.com/forum.jsp</a></li>
-              </ul>
-            </div>
-          </td>
-
-          <td width="299" valign="top">
-            <div id="welcome" style="border-right: #666666 1px dotted">
-              <h1>Welcome</h1>
-              <br />
-              <center>
-                <img
-                  src="images/globe_10.gif"
-                  alt="business"
-                  width="196"
-                  height="106"
-                />
-              </center>
-              <br />
-              <p>
-                Each people plan their site layouts depending upon their
-                business type. Here comes a free designer template which
-                provides you with a selection of different kinds of web design
-                starting from business template, fashion template, media
-                template, Science template, Arts template and much more.
-              </p>
-            </div>
-          </td>
-
-          <td width="299" valign="top">
-            <div id="news">
-              <h1>News &amp; Events</h1>
-              <br />
-              <div class="img">
-                <img src="images/globe_12.gif" alt="Business" />
-              </div>
-              <h2>Nov. 17, 2008.</h2>
-              <p>
-                Get your dream web design at no cost, no extra manpower for your
-                professional website.
-              </p>
-              <br />
-              <div class="img">
-                <img src="images/globe_16.gif" alt="Business" />
-              </div>
-              <h2>Nov. 17, 2008.</h2>
-              <p>
-                Get your dream web design at no cost, no extra manpower for your
-                professional website.
-              </p>
-            </div>
-          </td>
-        </tr>
-      </table>
-
-      <div id="footer_top">
-        <div id="footer_navigation"></div>
-
-        <div id="footer_copyright">
-          <center><img alt="business" width="196" height="106" /></center>
-          <br />
-          <p>
-            Each people plan their site layouts depending upon their business
-            type. Here comes a free designer template which provides you with a
-            selection of different kinds of webdesign starting from business
-            template, fashion template, media template, Science template, Arts
-            template and much more.
-          </p>
-
-          Copyright © Your Company Name
-        </div>
-      </div>
-
-      <script type="text/javascript">
-        document.onload = ctck();
-      </script>
+    <div id="header">
+      <h1>
+        Oquirrh Mountain Online Banking System<span class="style1"></span>
+      </h1>
+      <h2>Banking Made Easy<span class="style1"></span></h2>
+      <!-- <h3>Extraordinary Service</h3> -->
     </div>
+
+    <div id="navigation">
+      <ul>
+        <li><a href="create1.html">NEW CUSTOMER</a></li>
+        <li><a href="login.html">LOGIN</a></li>
+        <li><a href="about.html">ABOUT US</a></li>
+      </ul>
+    </div>
+    <div class="dashboard" id="dashboard"><h1>Personal Dashboard</h1></div>
+    <br />
+    <div class="depositMessage"></div>
+    <div class="deposit" id="deposit">
+      <form>
+        <input id="input" placeholder="0.00" />
+        <button>Deposit</button>
+      </form>
+    </div>
+
+    <table class="accounts" id="accounts">
+      <tr>
+        <th>Account</th>
+        <th>Balance</th>
+      </tr>
+      <tr id="checking">
+        <td>Checking</td>
+        <td id="depositTarget" inputmode="numeric">$123,545.00</td>
+      </tr>
+      <!-- <tr id="savings">
+        <td>Savings</td>
+        <td></td>
+      </tr> -->
+    </table>
+
+    <div id="footer">
+      <br />
+      <p>
+        If you have any questions or concerns <br />
+        please keep them to yourself
+        <br />
+        so we don't ever have to update anything. <br />
+        Thank you for your business.
+      </p>
+      <i>Copyright © Satire Mac's Target Marketing </i>
+    </div>
+    <script src="/script.js"></script>
   </body>
 </html>
+
+<!-- <tr>
+  <td class="accounts">
+    <h1>Account</h1>
+  </td>
+  <tr class="savings">
+    <p>Savings</p>
+  </tr>
+
+  <td class="con">
+    <div id="heade2"><h1>Balance</h1></div>
+    <p>
+      Your balance is:
+      <display><input id="savings_balance" type="text" /></display>
+    </p>
+  </td>
+</tr> -->

@@ -1,34 +1,6 @@
-@charset "utf-8";
-/* CSS Document */
-
-.html {
-  background-image: url("/img/Elk.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+html {
+  align-items: center;
 }
-body {
-  margin: 0;
-  color: #232323;
-  background: #191919;
-}
-div,
-h1,
-h2,
-h3,
-h4,
-p,
-form,
-label,
-input,
-textarea,
-img,
-span {
-  margin: 0;
-  padding: 0;
-}
-
 ul {
   margin: 0;
   padding: 0;
@@ -37,29 +9,94 @@ ul {
   line-height: 0;
 }
 
-.spacer {
-  clear: both;
-  font-size: 0;
-  line-height: 0;
+header {
+  align-content: center;
 }
-.more {
-  font: normal 11px/18px Arial, Helvetica, sans-serif;
-  color: #00d09d;
-  text-decoration: none;
-  padding-left: 230px;
-}
-.style1 {
-  color: #00d09d;
-}
-/*------------------------------------------------body--------------------*/
 
-#top_links {
-  margin: 0 auto;
-  padding: 0px;
-  width: 900px;
-  height: 40px;
+/* ------------------------------------------------body-------------------- */
+body {
+  background: url("/img/elk.jpeg");
+  background-size: cover;
+  background-position: 50% 60%;
+  background-attachment: fixed;
+  color: white;
+  font-family: Quicksand, sans-serif;
+  overflow-y: hidden;
 }
-#top_linksin {
+
+#navigation {
+  margin: 1em auto;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.39);
+  border: 1px solid #282828;
+  border-radius: 0.5em;
+}
+
+#navigation ul {
+  list-style: none;
+}
+#navigation ul li {
+  color: #adadad;
+  display: inline-block;
+  /* float: left; */
+  text-align: center;
+  font: bold 15px/40px Arial, Helvetica, sans-serif;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-right: 1px solid #282828;
+}
+#navigation ul li a {
+  text-decoration: none;
+  display: inline-block;
+  color: #adadad;
+}
+#navigation ul li a:hover {
+  color: #ffffff;
+}
+
+.dashboard {
+  text-align: center;
+}
+.deposit {
+  text-align: center;
+  margin: 1em;
+}
+
+#input {
+  text-align: right;
+}
+
+#accounts {
+  text-align: right;
+  padding: 2em;
+  margin: 1em;
+  width: 100%;
+}
+.accounts th {
+  font-size: xx-large;
+}
+
+.accounts td {
+  font-size: x-large;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+}
+
+#footer p {
+  font-size: small;
+}
+
+/* #navigation ul li.last {
+  border: none;
+  float: left;
+} */
+
+/* #top_linksin {
   padding: 10px 0 0 0;
   width: 310px;
   height: 18px;
@@ -90,14 +127,14 @@ ul {
 
 #header {
   margin: 0 auto;
-  background: #000 url(images/globe_03.gif) 0 0 no-repeat;
-  width: 897px;
-  height: 282px;
+  margin: 0;
 }
 #header h1 {
   font: bold 44px/18px Arial, Helvetica, sans-serif;
   color: #ffffff;
   padding: 100px 0 0 380px;
+  background-color: rgba(0, 0, 0, 0.39);
+  text-align: center;
 }
 #header h2 {
   font: bold italic 24px/18px Arial, Helvetica, sans-serif;
@@ -105,39 +142,10 @@ ul {
   padding: 20px 0 0 380px;
 }
 
-#navigation {
-  margin: 0 auto;
-  width: 896px;
-  height: 40px;
-  background: #000;
-  border: 1px solid #282828;
-}
-#navigation ul {
-  list-style: none;
-}
-#navigation ul li {
-  color: #adadad;
-  float: left;
-  text-align: center;
-  font: bold 15px/40px Arial, Helvetica, sans-serif;
-  width: 127px;
-  border-right: 1px solid #282828;
-}
-#navigation ul li a {
-  text-decoration: none;
-  display: block;
-  color: #adadad;
-}
-#navigation ul li a:hover {
-  color: #ffffff;
-}
-#navigation ul li.last {
-  border: none;
-  float: left;
-}
+
 
 #content1 {
-  width: 897px;
+  width: 80%;
   margin: 0 auto;
   background: url(images/globe_05.jpg) 0 0 repeat-y;
 }
@@ -278,4 +286,4 @@ ul {
 #footer_design a:hover {
   color: #b6ff06;
   text-decoration: underline;
-}
+} */
