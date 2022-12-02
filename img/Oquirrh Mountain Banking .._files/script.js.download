@@ -1,17 +1,14 @@
-const withdraw = document.getElementById("withdraw-amount");
-
 const apiKey = "33980044ee81551f9abe638d67dd1337";
+
 const main = document.getElementById("main");
 const weather = document.getElementById("weather");
 const search = document.getElementById("search");
 
-const url = (code) =>
-  `https://api.openweathermap.org/data/2.5/weather?q=${code}&appid=${apiKey}&units=imperial`;
+const url = (city) =>
+  `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
 
-console.log(url());
-
-async function getWeatherByLocation(code) {
-  const resp = await fetch(url(code), {
+async function getWeatherByLocation(city) {
+  const resp = await fetch(url(city), {
     origin: "cros",
   });
   const respData = await resp.json();
@@ -25,34 +22,54 @@ function addWeatherToPage(data) {
   const weather = document.createElement("div");
   weather.classList.add("weather");
 
-  weather.innerHTML = `<h2><img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /> ${temp}°F <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /></h2>
-  <h3>${data.weather[0].main}</h3>`;
+  weather.innerHTML = `
+          <h2><img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /> ${temp}°F <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /></h2>
+          <small>${data.weather[0].main}</small>
+          
+          `;
 
   //   cleanup
   main.innerHTML = "";
   main.appendChild(weather);
 }
 
+// function Ktoc(K) {
+//   return Math.floor(K - 273.15);
+// }
+
 weather.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const code = search.value;
+  const city = search.value;
 
-  if (code) {
-    getWeatherByLocation(code);
+  if (city) {
+    getWeatherByLocation(city);
   }
 });
+
+// const weatherAPI =
+//   "https://api.openweathermap.org/data/2.5/weather?q=Tooele&appid=33980044ee81551f9abe638d67dd1337&units=imperial";
+// let weather = document.getElementById("weather");
+
+// fetch(weatherAPI)
+//   .then((response) => response.json())
+//   .then((jsObject) => {
+//     var list = jsObject;
+//     console.log(list);
+//   });
+
+// weather.innerHTML = `
+//   <h2><img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /> ${temp}°C <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /></h2>
+//   <small>${data.weather[0].main}</small>`;
+
+// // Create a div with a card class
+// const card = document.createElement("div");
+// card.setAttribute("class", "card");
+// container.appendChild(weather);
 
 //deposit button event handler
 const deposit_btn = document.getElementById("deposit-btn");
 deposit_btn.addEventListener("click", function () {
-  function validateForm() {
-    var deposit = document.getElementById("deposit-amount").value;
-    if (deposit == "") {
-      alert("Please enter a value greater than '0'");
-      return false;
-    }
-  }
   const depositStringToInt = getInputNumb("deposit-amount");
 
   updateSpanTest("current-deposit", depositStringToInt);
@@ -90,5 +107,3 @@ function updateSpanTest(idName, addedNumber) {
   //x1.2 setting this value in balance
   document.getElementById(idName).innerText = total;
 }
-
-console.log(respData);
