@@ -8,7 +8,14 @@ const search = document.getElementById("search");
 const url = (code) =>
   `https://api.openweathermap.org/data/2.5/weather?q=${code}&appid=${apiKey}&units=imperial`;
 
-console.log(url());
+let code = 84074;
+fetch(
+  `https://api.openweathermap.org/data/2.5/weather?q=${code}&appid=${apiKey}&units=imperial`
+)
+  .then((response) => response.json())
+  .then((jsObject) => {
+    console.log(jsObject);
+  });
 
 async function getWeatherByLocation(code) {
   const resp = await fetch(url(code), {
@@ -46,13 +53,6 @@ weather.addEventListener("submit", (e) => {
 //deposit button event handler
 const deposit_btn = document.getElementById("deposit-btn");
 deposit_btn.addEventListener("click", function () {
-  function validateForm() {
-    var deposit = document.getElementById("deposit-amount").value;
-    if (deposit == "") {
-      alert("Please enter a value greater than '0'");
-      return false;
-    }
-  }
   const depositStringToInt = getInputNumb("deposit-amount");
 
   updateSpanTest("current-deposit", depositStringToInt);
@@ -91,4 +91,29 @@ function updateSpanTest(idName, addedNumber) {
   document.getElementById(idName).innerText = total;
 }
 
-console.log(respData);
+// btnSuccess.addEventListener("click", validate);
+
+// function validate(e) {
+//   e.preventDefault();
+
+//   const btnSuccess = document.getElementsByClassName("btn-success");
+//   let valid = true;
+
+//   if (!depositAmount.value) {
+//     const inputError = document.getElementById("inputError");
+//     inputError.classList.add("visible");
+//     btnSuccess.classList.add("invalid");
+//     inputError.setAttribute("aria-hidden", false);
+//     inputError.setAttribute("aria-invalid", true);
+//   }
+
+//   return valid;
+// }
+
+// function validateForm() {
+//   if (document.getElementById("deposit-amount").value === "") {
+//     btnSuccess.disabled = true;
+//   } else {
+//     btnSuccess.disabled = false;
+//   }
+// }
