@@ -6,16 +6,14 @@ const weather = document.getElementById("weather");
 const search = document.getElementById("search");
 
 const url = (code) =>
-  `https://api.openweathermap.org/data/2.5/weather?q=${code}&appid=${apiKey}&units=imperial`;
+  `https://api.openweathermap.org/data/2.5/weather?zip=${code}&appid=${apiKey}&units=imperial`;
 
-let code = 84074;
+let code = document.getElementById("search").innerText;
 fetch(
-  `https://api.openweathermap.org/data/2.5/weather?q=${code}&appid=${apiKey}&units=imperial`
+  `https://api.openweathermap.org/data/2.5/weather?zip=${code}&appid=${apiKey}&units=imperial`
 )
   .then((response) => response.json())
-  .then((jsObject) => {
-    console.log("Api Object", jsObject);
-  });
+  .then((jsObject) => {});
 
 async function getWeatherByLocation(code) {
   const resp = await fetch(url(code), {
@@ -99,6 +97,7 @@ function updateSpanTest(idName, addedNumber) {
   //x1.2 setting this value in balance
   document.getElementById(idName).innerText = total;
 }
+// console.log("Api Object", jsObject);
 
 // deposit_btn.setAttribute.apply(this.Function(deposit_amount));
 // {
