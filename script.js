@@ -8,12 +8,16 @@ const search = document.getElementById("search");
 const url = (code) =>
   `https://api.openweathermap.org/data/2.5/weather?zip=${code}&appid=${apiKey}&units=imperial`;
 
-let code = document.getElementById("search").innerText;
+// let code = document.getElementById("search").innerText;
+let code = 84074;
 fetch(
   `https://api.openweathermap.org/data/2.5/weather?zip=${code}&appid=${apiKey}&units=imperial`
 )
   .then((response) => response.json())
-  .then((jsObject) => {});
+  .then((jsObject) => {
+    console.log(jsObject);
+    console.log(jsObject.name);
+  });
 
 async function getWeatherByLocation(code) {
   const resp = await fetch(url(code), {
@@ -30,8 +34,8 @@ function addWeatherToPage(data) {
   const weather = document.createElement("div");
   weather.classList.add("weather");
 
-  weather.innerHTML = `<h2><img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /> ${temp}°F <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /></h2>
-  <h3>${data.weather[0].main}</h3>`;
+  weather.innerHTML = `<br><h1>${data.name}</h1><h2><img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /> ${temp}°F <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /></h2>
+  <h3>${data.weather[0].description}</h3>`;
 
   //   cleanup
   main.innerHTML = "";
@@ -97,41 +101,3 @@ function updateSpanTest(idName, addedNumber) {
   //x1.2 setting this value in balance
   document.getElementById(idName).innerText = total;
 }
-// console.log("Api Object", jsObject);
-
-// deposit_btn.setAttribute.apply(this.Function(deposit_amount));
-// {
-//   var deposit_amount = document.getElementById("deposit-amount");
-
-//   if ((deposit_amount = 0 || ""));
-//   {
-//     alert("Please enter a valid number greater than '0'");
-//   }
-// }
-
-// btnSuccess.addEventListener("click", validate);
-
-// function validate(e) {
-//   e.preventDefault();
-
-//   const btnSuccess = document.getElementsByClassName("btn-success");
-//   let valid = true;
-
-//   if (!depositAmount.value) {
-//     const inputError = document.getElementById("inputError");
-//     inputError.classList.add("visible");
-//     btnSuccess.classList.add("invalid");
-//     inputError.setAttribute("aria-hidden", false);
-//     inputError.setAttribute("aria-invalid", true);
-//   }
-
-//   return valid;
-// }
-
-// function validateForm() {
-//   if (document.getElementById("deposit-amount").value === "") {
-//     btnSuccess.disabled = true;
-//   } else {
-//     btnSuccess.disabled = false;
-//   }
-// }
