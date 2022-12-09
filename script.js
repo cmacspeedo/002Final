@@ -14,7 +14,7 @@ fetch(
 )
   .then((response) => response.json())
   .then((jsObject) => {
-    console.log(jsObject);
+    console.log("Api Object", jsObject);
   });
 
 async function getWeatherByLocation(code) {
@@ -53,6 +53,10 @@ weather.addEventListener("submit", (e) => {
 //deposit button event handler
 const deposit_btn = document.getElementById("deposit-btn");
 deposit_btn.addEventListener("click", function () {
+  if (document.getElementById("deposit-amount").value == "") {
+    alert('Enter a valid number greater than "0"');
+    return;
+  }
   const depositStringToInt = getInputNumb("deposit-amount");
 
   updateSpanTest("current-deposit", depositStringToInt);
@@ -65,11 +69,16 @@ deposit_btn.addEventListener("click", function () {
 //withdraw button event handler
 const withdraw_btn = document.getElementById("withdraw-btn");
 withdraw_btn.addEventListener("click", function () {
+  if (document.getElementById("withdraw-amount").value == "") {
+    alert('Enter a valid number greater than "0"');
+    return;
+  }
   const withdrawNumb = getInputNumb("withdraw-amount");
 
   updateSpanTest("current-withdraw", withdrawNumb);
   updateSpanTest("current-balance", -1 * withdrawNumb);
   //setting up the input field blank when clicked
+
   document.getElementById("withdraw-amount").value = "";
 });
 
@@ -90,6 +99,16 @@ function updateSpanTest(idName, addedNumber) {
   //x1.2 setting this value in balance
   document.getElementById(idName).innerText = total;
 }
+
+// deposit_btn.setAttribute.apply(this.Function(deposit_amount));
+// {
+//   var deposit_amount = document.getElementById("deposit-amount");
+
+//   if ((deposit_amount = 0 || ""));
+//   {
+//     alert("Please enter a valid number greater than '0'");
+//   }
+// }
 
 // btnSuccess.addEventListener("click", validate);
 

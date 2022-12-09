@@ -124,8 +124,8 @@
           
           <div class="col-lg-4 mb-3">
               <div class="balance status">
-                  <h5>Balance</h5>
-                  <h2>$ <span id="current-balance">1240</span></h2>
+                  <h5>Your Current Balance</h5>
+                  <h2>$ <span id="current-balance">0</span></h2>
               </div>
            </div>
       </div>
@@ -136,10 +136,16 @@
           <div class="col-lg-6">
               <div class="submit-area">
                   <h4>Deposit Amount</h4>
-                  <input id="deposit-amount" type="text"  class="form-control" placeholder="Enter deposit amount"><br>
-                  <button id="deposit-btn" onkeyup="validateForm()" class="btn btn-success">Deposit</button>
+                  <!-- <form action=""> -->
+                  <input id="deposit-amount" type="text"  class="form-control" placeholder="Enter deposit amount" ><br>
+                  <!-- <script>
+                    const btn = document.getElementById('deposit-btn');
+                    console.log(btn.innerHTML)
+                  </script> -->
+                  <button id="deposit-btn"class="btn btn-success" >Deposit</button>
                   <!-- <span role="alert" id="inputError" aria-hidden="true"> Please enter valid value greater than '0'. </span> -->
-              </div>
+                <!-- </form>     -->
+                </div>
           </div>
           
           <div class="col-lg-6">
