@@ -15,7 +15,7 @@ header {
 
 /* ------------------------------------------------body-------------------- */
 body {
-  background: url("/img/elk.jpeg");
+  background: url("img/elk.jpeg");
   background-size: cover;
   background-position: 50% 60%;
   background-attachment: fixed;
@@ -80,11 +80,11 @@ body {
   width: 70%;
 }
 
-/* body {
-  margin: 0;
-  padding-top: 100px;
-  background-color: #363958;
-} */
+body {
+  margin: 1em;
+  /* padding-top: 100px; */
+  /* background-color: #363958; */
+}
 
 .submit-area {
   padding: 30px;
